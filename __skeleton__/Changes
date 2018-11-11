@@ -1,8 +1,4 @@
 Revision history for Assert-Refute-T-INSERT_NAME
 
-0.02    Fri Aug 24 2018
-        Don't load Test::Builder
-
-0.01    Fri Aug 24 2018
-        Implement cmp_deeply, reexport the rest of Test::Deep
-
+0.01    Day Mon DD YYYY
+        - Created first version

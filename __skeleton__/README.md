@@ -2,7 +2,7 @@ Assert-Refute-T-INSERT_NAME
 
 # NAME
 
-Assert::Refute::T::INSERT_NAME - Test::Deep plugin for Assert::Refute
+Assert::Refute::T::INSERT_NAME - Yet another plugin for Assert::Refute
 
 # INSTALLATION
 
