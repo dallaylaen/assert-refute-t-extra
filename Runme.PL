@@ -1,5 +1,10 @@
 #!/usr/bin/env perl
 
+# Now this is stupid, but I couldn't figure out
+# how to make Makefile.PL recurse on `make dist`
+# If you know, please replace this with a Makefile.PL
+# or Build.PL or whatever build system.
+
 use strict;
 use warnings;
 use File::Copy;
