@@ -1,11 +1,13 @@
+RUNME_PL=perl Runme.PL -m $(MAKE) --verbose
+
 dist:
-	./make_all.sh manifest test dist
-	mv */Assert-Refute-*.gz .
+	$(RUNME_PL) dist
 
 test:
-	./make_all.sh test
+	$(RUNME_PL) test
 
 clean:
-	./make_all.sh clean
-	rm -f Assert-Refute-*.tar.gz
+	$(RUNME_PL) clean
 
+help:
+	$(RUNME_PL) help
