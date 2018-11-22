@@ -7,7 +7,7 @@ our $VERSION = '0.01';
 
 =head1 NAME
 
-Assert::Refute::T::INSERT_NAME - Test::Deep plugin for Assert::Refute
+Assert::Refute::T::INSERT_NAME - A brand new plugin for Assert::Refute
 
 =head1 SYNOPSIS
 
@@ -20,7 +20,7 @@ rather than standard output.
     use Assert::Refute::T::INSERT_NAME;
 
     my $report = try_refute {
-        ...
+        my_check $foo, $bar, ...
     };
 
 It may also be used with L<Test::More>:
@@ -28,7 +28,7 @@ It may also be used with L<Test::More>:
     use Test::More;
     use Assert::Refute::T::INSERT_NAME;
 
-    ...
+    my_check $foo, $bar, ...
 
 =head1 EXPORT
 
@@ -75,7 +75,7 @@ You can also look for information at:
 
 =over 4
 
-=item * github: L<https://github.com/dallaylaen/assert-refute-t-extra> 
+=item * github: L<https://github.com/dallaylaen/assert-refute-t-extra>
 
 =item * RT: CPAN's request tracker (report bugs here)
 
