@@ -2,7 +2,7 @@ Assert-Refute-T-Hash
 
 # NAME
 
-Assert::Refute::T::Hash - Yet another plugin for Assert::Refute
+Assert::Refute::T::Hash - Hash keys and values plugin for Assert::Refute
 
 # INSTALLATION
 

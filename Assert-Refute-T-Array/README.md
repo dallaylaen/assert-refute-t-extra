@@ -2,7 +2,7 @@ Assert-Refute-T-Array
 
 # NAME
 
-Assert::Refute::T::Array - Yet another plugin for Assert::Refute
+Assert::Refute::T::Array - List check plugin for Assert::Refute
 
 # INSTALLATION
 

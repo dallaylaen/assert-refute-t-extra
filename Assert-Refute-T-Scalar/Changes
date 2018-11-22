@@ -1,4 +1,5 @@
 Revision history for Assert-Refute-T-Scalar
 
-0.01    Day Mon DD YYYY
-        - Created first version
+0.16    Thu Nov 22 2018
+        - Split away from Assert::Refute
+        - Has maybe_is check

@@ -2,7 +2,7 @@ Assert-Refute-T-Scalar
 
 # NAME
 
-Assert::Refute::T::Scalar - Yet another plugin for Assert::Refute
+Assert::Refute::T::Scalar - Scalar value plugin for Assert::Refute
 
 # INSTALLATION
 
