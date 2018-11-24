@@ -18,7 +18,7 @@ WriteMakefile(
         'Test::More'     => 0.98, # done_testing + subtest
     },
     PREREQ_PM => {
-        'Assert::Refute' => 0.15,
+        'Assert::Refute' => 0.16,
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'Assert-Refute-T-Hash-*' },
