@@ -99,9 +99,7 @@ build_refute values_are => sub {
             } elsif (blessed $cond or UNIVERSAL::isa($cond, 'CODE')) {
                 subcontract "$_ contract" => $cond, $hash->{$_};
             } else {
-                # TODO bail_out when we can
-                carp  "FIX TEST! Unexpected value in spec: '$_'=". ref $cond;
-                croak "FIX TEST! Unexpected value in spec: '$_'=". ref $cond;
+                croak "FIX TEST! Unexpected value in values_are: '$_'=". ref $cond;
             };
         };
     });

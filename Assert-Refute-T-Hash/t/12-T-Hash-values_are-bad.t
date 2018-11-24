@@ -2,28 +2,24 @@
 
 use strict;
 use warnings;
-BEGIN{ delete @ENV{qw(NDEBUG PERL_NDEBUG)} };
 use Test::More;
 
-use Assert::Refute qw(:core);
-use Assert::Refute::Contract qw(contract);
+use Assert::Refute::Report;
 use Assert::Refute::T::Errors;
 use Assert::Refute::T::Hash;
 
 warns_like {
-
-    my $c = contract {
+    my $bad_contract = sub {
+        # Value spec is wrong, so this dies
         values_are { foo => {} }, { foo => {} }, "Fails";
     };
 
-    my $rep;
-    warns_like {
-        $rep = $c->apply;
+    my $report = Assert::Refute::Report->new;
+    dies_like {
+        $report->values_are( { foo => {} }, { foo => {} } );
     } qr/Unexpected.*foo.*HASH/, "Test warns about bad spec";
 
-    contract_is $rep, "tNd", "Failed but lived";
-
-    note "REPORT\n".$rep->get_tap."/REPORT";
+    note $report->get_tap;
 } '', "No warnings overall";
 
 done_testing;
