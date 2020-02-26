@@ -2,7 +2,7 @@ package Assert::Refute::T::Array;
 
 use strict;
 use warnings;
-our $VERSION = '0.16';
+our $VERSION = '0.17';
 
 =head1 NAME
 
@@ -50,7 +50,7 @@ All of the below functions are exported by default:
 =cut
 
 use Carp;
-use Scalar::Util qw(blessed);
+use Scalar::Util qw( blessed reftype );
 use parent qw(Exporter);
 
 our @EXPORT = qw(array_of);
@@ -149,8 +149,6 @@ Return value of code block is B<ignored>.
 
 Automatically succeeds if there are no elements.
 
-B<[EXPERIMENTAL]> Name and meaning may change in the future.
-
 =cut
 
 build_refute map_subtest => sub {
@@ -159,6 +157,11 @@ build_refute map_subtest => sub {
     $message ||= "map_subtest";
 
     $self->subcontract( $message => sub {
+        return ok 0, "Not an array"
+            unless reftype $data eq 'ARRAY';
+        # Test::More doesn't regard empty tests as passing.
+        ok 1, "empty array - automatic success"
+            unless @$data;
         $code->($_[0]) for @$data;
     } );
 }, block => 1, export => 1, manual => 1, args => 1;
@@ -177,8 +180,6 @@ would induce pairs:
 Return value of code block is B<ignored>.
 
 Automatically succeeds if list has less than 2 elements.
-
-B<[EXPERIMENTAL]> Name and meaning may change in the future.
 
 =cut
 
